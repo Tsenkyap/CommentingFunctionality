@@ -1,0 +1,33 @@
+{% load static %}
+   <html>
+    <head>
+        <title> dummy </title>
+        <link rel="stylesheet" href="{% static 'Comment_out/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Comment_out/bulma.min.css' %}">
+    </head>
+    <body>
+      <br>
+      <br>
+      <div class="container">
+       <div class="jumbotron">
+           <h1 class="display-2">Welcome to the comment section</h1>
+           <a href="{% url 'comment'%}" class="btn btn-outline-primary btn-lg" role="button">
+           Comment
+           </a>
+       </div>
+       </div>
+       
+       {% for c in comments %}
+              <div class="container">
+           <div class="page-header"><strong><h1 class="display-4">{{ c.name }}</h1></strong></div>
+           <hr>
+               <p class="lead" style="padding: 5px">
+               {{ c.comment }}</p>
+               </div>
+       {% endfor %}
+       
+    
+     
+    <script src="{% static 'Comment_out/bootstrap.min.js' %"></script>    
+    </body>
+</html>
